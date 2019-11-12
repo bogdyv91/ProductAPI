@@ -16,12 +16,12 @@ import org.springframework.stereotype.Service;
 import com.pentalog.api.converter.CurrencyConverter;
 import com.pentalog.api.converter.ProductConverter;
 import com.pentalog.api.dto.ProductDTO;
-import com.pentalog.api.dto.response.ApiError;
 import com.pentalog.api.exception.ObjectNotFoundException;
 import com.pentalog.api.model.Category;
 import com.pentalog.api.model.Product;
 import com.pentalog.api.repository.CategoryRepository;
 import com.pentalog.api.repository.ProductRepository;
+import com.pentalog.api.response.ApiError;
 
 @Service
 public class ProductServiceImpl implements ProductService {

@@ -3,7 +3,7 @@ package com.pentalog.api.exception;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.pentalog.api.dto.response.ApiError;
+import com.pentalog.api.response.ApiError;
 
 public class CustomExceptionContainingErrors extends RuntimeException {
 

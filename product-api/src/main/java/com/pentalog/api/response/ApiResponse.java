@@ -1,4 +1,4 @@
-package com.pentalog.api.dto.response;
+package com.pentalog.api.response;
 
 import java.time.LocalDateTime;
 import java.util.List;

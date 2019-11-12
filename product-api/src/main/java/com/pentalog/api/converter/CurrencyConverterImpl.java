@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import com.pentalog.api.dto.response.ApiError;
 import com.pentalog.api.exception.ImpossibleToConvertPriceException;
+import com.pentalog.api.response.ApiError;
 
 @Service
 public class CurrencyConverterImpl implements CurrencyConverter {

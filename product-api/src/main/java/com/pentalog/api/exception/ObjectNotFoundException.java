@@ -2,7 +2,7 @@ package com.pentalog.api.exception;
 
 import java.util.List;
 
-import com.pentalog.api.dto.response.ApiError;
+import com.pentalog.api.response.ApiError;
 
 public class ObjectNotFoundException extends CustomExceptionContainingErrors {
 

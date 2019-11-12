@@ -13,9 +13,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.pentalog.api.dto.ProductDTO;
-import com.pentalog.api.dto.response.ApiError;
 import com.pentalog.api.exception.InvalidRequestException;
 import com.pentalog.api.model.Product;
+import com.pentalog.api.response.ApiError;
 
 @Component
 public class ProductConverter {

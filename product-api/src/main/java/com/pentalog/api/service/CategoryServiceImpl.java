@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.pentalog.api.dto.CategoryDTO;
-import com.pentalog.api.dto.response.ApiError;
 import com.pentalog.api.exception.InvalidRequestException;
 import com.pentalog.api.model.Category;
 import com.pentalog.api.repository.CategoryRepository;
+import com.pentalog.api.response.ApiError;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {

@@ -7,10 +7,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.pentalog.api.dto.response.ApiResponse;
 import com.pentalog.api.exception.ImpossibleToConvertPriceException;
 import com.pentalog.api.exception.InvalidRequestException;
 import com.pentalog.api.exception.ObjectNotFoundException;
+import com.pentalog.api.response.ApiResponse;
 
 import lombok.extern.java.Log;
 

@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pentalog.api.dto.ProductDTO;
-import com.pentalog.api.dto.response.ApiResponse;
 import com.pentalog.api.model.Product;
+import com.pentalog.api.response.ApiResponse;
 import com.pentalog.api.service.ProductService;
 
 @RestController
