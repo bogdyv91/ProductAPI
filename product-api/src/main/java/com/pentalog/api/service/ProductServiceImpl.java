@@ -90,9 +90,9 @@ public class ProductServiceImpl implements ProductService {
 		Product product = this.getProductByIdAndCheckExistance(productId);
 		Set<Category> categories = this.getCategoriesByNamesAndCheckExistance(categoryNames);
 		List<ApiError> errors = new ArrayList<>();
-		categories.forEach(c -> {
-			if (!product.getCategories().contains(c)) {
-				errors.add(new ApiError(notAvailableProductErrorMessage, c.getName(), "category"));
+		categories.forEach(category -> {
+			if (!product.getCategories().contains(category)) {
+				errors.add(new ApiError(notAvailableProductErrorMessage, category.getName(), "category"));
 			}
 		});
 		if (errors.size() != 0) {
@@ -124,10 +124,10 @@ public class ProductServiceImpl implements ProductService {
 		Product product = this.getProductByIdAndCheckExistance(productId);
 		Field[] fields = product.getClass().getDeclaredFields();
 		productDTO.forEach((k, v) -> {
-			Arrays.asList(fields).forEach(t -> {
+			Arrays.asList(fields).forEach(field -> {
 				BigDecimal newPrice = null;
-				if (t.getName().equals(k)) {
-					t.setAccessible(true);
+				if (field.getName().equals(k)) {
+					field.setAccessible(true);
 					if (k.equals("price")) {
 						try {
 							if (productDTO.containsKey("symbol")) {
@@ -143,9 +143,9 @@ public class ProductServiceImpl implements ProductService {
 					}
 					try {
 						if (!k.equals("price")) {
-							t.set(product, v);
+							field.set(product, v);
 						} else {
-							t.set(product, newPrice);
+							field.set(product, newPrice);
 						}
 					} catch (Exception e) {
 						throw new ObjectNotFoundException(incorrectFieldNameErrorMessage,
@@ -166,8 +166,8 @@ public class ProductServiceImpl implements ProductService {
 	public List<Product> getProductsForCategories(List<String> categoryNames) {
 		Set<Category> categories = this.getCategoriesByNamesAndCheckExistance(categoryNames);
 		List<Product> products = new ArrayList<>();
-		categories.forEach(c -> {
-			products.addAll(c.getProducts());
+		categories.forEach(category -> {
+			products.addAll(category.getProducts());
 		});
 		return products;
 	}
@@ -178,9 +178,9 @@ public class ProductServiceImpl implements ProductService {
 			List<ApiError> errors = new ArrayList<>();
 			List<String> existingCategories = new ArrayList<>();
 			categories.stream().forEach(x -> existingCategories.add(x.getName().toLowerCase()));
-			categoryNames.forEach(x -> {
-				if (!existingCategories.contains(x.toLowerCase())) {
-					errors.add(new ApiError(notFoundCategoryErroMessage, x, "category"));
+			categoryNames.forEach(category -> {
+				if (!existingCategories.contains(category.toLowerCase())) {
+					errors.add(new ApiError(notFoundCategoryErroMessage, category, "category"));
 				}
 			});
 			throw new ObjectNotFoundException(notFoundCategoryExceptionMessage, errors);
