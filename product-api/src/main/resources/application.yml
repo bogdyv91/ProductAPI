@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/api?useSSL=false&allowPublicKeyRetrieval=true
+    username: username
+    password: password
+  jpa: 
+    properties.hibernate.show_sql: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  flyway:
+    baseline-on-migrate: false
+    baseline-version: 2.4
+    
+
+baseSymbol : EUR
+exchangeURL: https://api.exchangeratesapi.io/latest?
+exchangeErrorMessage: Failed to convert the price
+profilePersistanceErrorMessage: Profile could not be persisted
+uniqueNameErrorMessage: Name already used
+uniqueProductErrorMessage: Product already available in this category
+uniqueProductExceptionMessage: Product already available in some of the specified categories
+notAvailableProductErrorMessage: Product not available in this category
+notAvailableProductExceptionMessage: Product not available in the specified categories
+notFoundProductErrorMessage: Product id not found
+notFoundProductExceptionMessage: Specified product does not exist
+notFoundCategoryErroMessage: Category not found
+notFoundCategoryExceptionMessage: At least one category was not found
+providedObjectNotValidMessage: Some fields are not valid
+symbolNotAvailableErrorMessage: Specified symbol is not available
+exchangeApiNotAvailableErrorMessage: Exchange api could not be accessed
+incorrectFieldNameErrorMessage: Name of the field is incorrect
+categoryNameNotValidExceptionMessage: Name of the category is incorrect
+notValidPriceErrorMessage: Not a valid price number
